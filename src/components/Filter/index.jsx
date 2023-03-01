@@ -13,10 +13,45 @@ import {
   faCircle as faHollowCircle,
   
 } from '@fortawesome/free-regular-svg-icons';
-import React from 'react';
+import React, { useContext } from 'react';
 import './index.css';
+import { filterContext } from '../Contexts/filterContext';
 
 function Filter() {
+
+  const {all, setAll, registered, setRegistered, bookmarked, setBookmarked, seatAvailable, setSeatAvailable} = useContext(filterContext);
+
+
+  const handleAllFilter = () => {
+    setAll(true);
+    setBookmarked(false);
+    setRegistered(false);
+    setSeatAvailable(false);
+  }
+
+  const handleRegisterFilter = () => {
+    setAll(false);
+    setBookmarked(false);
+    setRegistered(true);
+    setSeatAvailable(false);
+  }
+
+  const handleBookmarkedFilter = () => {
+    setAll(false);
+    setBookmarked(true);
+    setRegistered(false);
+    setSeatAvailable(false);
+  }
+
+  const handleSeatsFilter = () => {
+    setAll(false);
+    setBookmarked(false);
+    setRegistered(false);
+    setSeatAvailable(true);
+  }
+
+
+
   return (
     <div className='filter'>
       <div className='filter-top'>
@@ -32,24 +67,24 @@ function Filter() {
       </div>
       <div className='filter-down'>
         <div className='filter-left'>
-          <div className='filter-all'>
-            <FontAwesomeIcon icon={faCircleDot} />
+          <div onClick={handleAllFilter} className='filter-all'>
+            <FontAwesomeIcon icon={all ? faCircleDot : faHollowCircle} />
             <div>ALL</div>
           </div>
-          <div className='filter-registered'>
-            <FontAwesomeIcon icon={faHollowCircle} />
+          <div onClick={handleRegisterFilter} className='filter-registered'>
+            <FontAwesomeIcon icon={registered ? faCircleDot : faHollowCircle} />
             <div>REGISTERED</div>
           </div>
         </div>
 
-        <div className='filter-right'>
+        <div onClick={handleBookmarkedFilter} className='filter-right'>
           <div className='bookmarked'>
             BOOKMARKED
-            <FontAwesomeIcon icon={faHollowCircle} />
+            <FontAwesomeIcon icon={bookmarked ? faCircleDot : faHollowCircle} />
           </div>
-          <div className='seats'>
+          <div onClick={handleSeatsFilter} className='seats'>
             SEATS AVAILABLE
-            <FontAwesomeIcon icon={faHollowCircle} />
+            <FontAwesomeIcon icon={seatAvailable ? faCircleDot : faHollowCircle} />
           </div>
         </div>
       </div>
