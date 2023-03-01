@@ -30,7 +30,7 @@ function EventDetails() {
     <div className='event-details'>
       <Filter />
 
-      <Card key={oneCard.id} event={oneCard} />
+      <Card className='one-card' key={oneCard.id} event={oneCard} />
     </div>
   ) : (
     <div>Loading is...</div>
