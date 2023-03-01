@@ -16,24 +16,24 @@ function App() {
             element={
               <FilterProvider>
                 <div>
-                <Header />
-                <EventList />
-                <Footer />
-              </div>
+                  <Header />
+                  <EventList />
+                  <Footer />
+                </div>
               </FilterProvider>
             }
           />
 
-<Route
+          <Route
             path='/:id'
             element={
               <FilterProvider>
-              <div>
-              <Header />
-              <EventDetails />
-              <Footer />
-            </div>
-            </FilterProvider>
+                <div>
+                  <Header />
+                  <EventDetails />
+                  <Footer />
+                </div>
+              </FilterProvider>
             }
           />
         </Routes>

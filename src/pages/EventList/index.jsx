@@ -10,8 +10,6 @@ function EventDetails() {
     <div className='event-list'>
       <Filter />
       <CardContainer />
-
-
     </div>
   );
 }

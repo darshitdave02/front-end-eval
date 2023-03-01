@@ -1,100 +1,90 @@
 .filter {
-    display: flex;
-    
-    flex-direction: column;
+  display: flex;
 
+  flex-direction: column;
 }
 
 .filter-top {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-    font-size: 25px;
-    
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  font-size: 25px;
 }
 
 .filter-icon {
-    display: flex;
-    gap: 10px;
-    
+  display: flex;
+  gap: 10px;
 }
 
 .input {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .filter-down {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 20px;
 }
 
-.filter-left  {
-    display: flex;
-    flex-direction: column;
-    gap: 8px
+.filter-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .filter-all {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 }
 
 .filter-registered {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 }
 
 .bookmarked {
-     display: flex;
-    gap: 20px;
-
+  display: flex;
+  gap: 41px;
 }
 
 .filter-right {
-    display: flex;
-    flex-direction: column;
-    gap: 8px
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .seats {
-    display: flex;
-    gap: 20px;
-
+  display: flex;
+  gap: 20px;
 }
 
 .filter-input {
-    width: 250px;
-    height: 20px;
-    border-radius: 8px;
-    font-size: 15px;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: #9b9999;
+  width: 250px;
+  height: 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #9b9999;
 }
 
 .filter-reg-col-yellow {
-    color: #ebeda3;
-    display: flex;
-    gap: 5px;
+  color: #ebeda3;
+  display: flex;
+  gap: 5px;
 }
 
 .filter-reg-col-red {
-    color: #a0f3ad;
-    display: flex;
-    gap: 5px;
+  color: #a0f3ad;
+  display: flex;
+  gap: 5px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .filter-input {
-        width: 100px;
-    }
-
+  .filter-input {
+    width: 100px;
+  }
 }
-
-
-
-

@@ -31,41 +31,37 @@ function Card(props) {
   };
 
   const handleRegisterClick = async () => {
-
-    if(isRegister) {
+    if (isRegister) {
       try {
         await makeRequest(UPDATE_EVENT(props.event.id), {
           data: {
             isRegistered: !isRegister,
           },
         });
-  
+
         setIsRegister(!isRegister);
       } catch (e) {
         // Handle ToDo
       }
     }
-    if(props.event.areSeatsAvailable) {
+    if (props.event.areSeatsAvailable) {
       try {
         await makeRequest(UPDATE_EVENT(props.event.id), {
           data: {
             isRegistered: !isRegister,
           },
         });
-  
+
         setIsRegister(!isRegister);
       } catch (e) {
         // Handle ToDo
       }
-
     }
-
-    
   };
 
   const navigateToCardDetails = () => {
-    navigate(`/${props.event.id}`)
-  }
+    navigate(`/${props.event.id}`);
+  };
 
   return (
     <div onClick={navigateToCardDetails} className='card'>
@@ -78,19 +74,20 @@ function Card(props) {
         <div className='venue'>VENUE: {props.event.venue}</div>
         <div className='date'>DATE: {props.event.datetime}</div>
       </div>
-      <div  className='meta'>
-        {props.event.areSeatsAvailable && <div onClick={handleRegisterClick} className={isRegister ? 'filter-reg-col-red' : ''}>
-          <FontAwesomeIcon icon={isRegister ? faCircleCheck : true} />
-          <div>{isRegister ? 'REGISTERED' : 'Register'}</div>
-        </div>}
+      <div className='meta'>
+        {props.event.areSeatsAvailable && (
+          <div onClick={handleRegisterClick} className={isRegister ? 'filter-reg-col-red' : ''}>
+            <FontAwesomeIcon icon={isRegister ? faCircleCheck : true} />
+            <div>{isRegister ? 'REGISTERED' : 'Register'}</div>
+          </div>
+        )}
 
-        {!props.event.areSeatsAvailable && <div className={isRegister ? 'filter-reg-col-red' : 'filter-reg-col-yellow'}>
-          <FontAwesomeIcon icon={isRegister ? faCircleCheck : faCircleXmark} />
-          <div>{isRegister ? 'REGISTERED' : 'NO SEATS ARE AVAILABLE'}</div>
-        </div>}
-
-
-
+        {!props.event.areSeatsAvailable && (
+          <div className={isRegister ? 'filter-reg-col-red' : 'filter-reg-col-yellow'}>
+            <FontAwesomeIcon icon={isRegister ? faCircleCheck : faCircleXmark} />
+            <div>{isRegister ? 'REGISTERED' : 'NO SEATS ARE AVAILABLE'}</div>
+          </div>
+        )}
 
         <div className='bookmark'>
           <FontAwesomeIcon

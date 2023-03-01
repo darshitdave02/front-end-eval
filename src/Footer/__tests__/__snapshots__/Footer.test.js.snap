@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders Header component 1`] = `
+<DocumentFragment>
+  <div
+    class="footer"
+  >
+    <div
+      class="footer-title"
+    >
+      THEMES
+    </div>
+    <div
+      class="purple"
+    />
+    <div
+      class="blue"
+    />
+    <div
+      class="grey"
+    />
+  </div>
+</DocumentFragment>
+`;

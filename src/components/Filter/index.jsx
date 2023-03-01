@@ -5,52 +5,52 @@ import {
   faChevronUp,
   faCircleDot,
   faCircle,
-  faBookmark
-  
+  faBookmark,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  
-  faCircle as faHollowCircle,
-  
-} from '@fortawesome/free-regular-svg-icons';
+import { faCircle as faHollowCircle } from '@fortawesome/free-regular-svg-icons';
 import React, { useContext } from 'react';
 import './index.css';
 import { filterContext } from '../Contexts/filterContext';
 
 function Filter() {
-
-  const {all, setAll, registered, setRegistered, bookmarked, setBookmarked, seatAvailable, setSeatAvailable} = useContext(filterContext);
-
+  const {
+    all,
+    setAll,
+    registered,
+    setRegistered,
+    bookmarked,
+    setBookmarked,
+    seatAvailable,
+    setSeatAvailable,
+  } = useContext(filterContext);
 
   const handleAllFilter = () => {
     setAll(true);
     setBookmarked(false);
     setRegistered(false);
     setSeatAvailable(false);
-  }
+  };
 
   const handleRegisterFilter = () => {
     setAll(false);
     setBookmarked(false);
     setRegistered(true);
     setSeatAvailable(false);
-  }
+  };
 
   const handleBookmarkedFilter = () => {
     setAll(false);
     setBookmarked(true);
     setRegistered(false);
     setSeatAvailable(false);
-  }
+  };
 
   const handleSeatsFilter = () => {
     setAll(false);
     setBookmarked(false);
     setRegistered(false);
     setSeatAvailable(true);
-  }
-
-
+  };
 
   return (
     <div className='filter'>
@@ -77,12 +77,13 @@ function Filter() {
           </div>
         </div>
 
-        <div onClick={handleBookmarkedFilter} className='filter-right'>
-          <div className='bookmarked'>
+        <div className='filter-right'>
+          <div onClick={handleBookmarkedFilter} className='bookmarked'>
             BOOKMARKED
             <FontAwesomeIcon icon={bookmarked ? faCircleDot : faHollowCircle} />
           </div>
-          <div onClick={handleSeatsFilter} className='seats'>
+
+          <div className='seats' onClick={handleSeatsFilter}>
             SEATS AVAILABLE
             <FontAwesomeIcon icon={seatAvailable ? faCircleDot : faHollowCircle} />
           </div>
