@@ -1,0 +1,81 @@
+.filter {
+    display: flex;
+    
+    flex-direction: column;
+
+}
+
+.filter-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-size: 25px;
+    
+}
+
+.filter-icon {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.input {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-down {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.filter-left  {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.filter-all {
+    display: flex;
+    gap: 14px;
+}
+
+.filter-registered {
+    display: flex;
+    gap: 14px;
+}
+
+.bookmarked {
+     display: flex;
+    gap: 20px;
+
+}
+
+.filter-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.seats {
+    display: flex;
+    gap: 20px;
+
+}
+
+.filter-input {
+    width: 250px;
+    height: 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #9b9999;
+}
+
+
+
+
