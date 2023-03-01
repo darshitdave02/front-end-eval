@@ -76,6 +76,18 @@
     color: #9b9999;
 }
 
+.filter-reg-col-yellow {
+    color: #ebeda3;
+    display: flex;
+    gap: 5px;
+}
+
+.filter-reg-col-red {
+    color: #a0f3ad;
+    display: flex;
+    gap: 5px;
+}
+
 
 
 

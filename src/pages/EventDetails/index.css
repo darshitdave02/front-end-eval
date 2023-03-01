@@ -1,5 +1,6 @@
 .event-details {
-  padding-left: 25vw;
-  padding-right: 25vw;
-  /* padding-bottom: 30px; */
+    padding-left: 25vw;
+    padding-right: 25vw;
+    min-height: 100vh;
+    
 }

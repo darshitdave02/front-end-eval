@@ -13,9 +13,18 @@ function CardContainer() {
     const fetchData = async () => {
       try {
         const data = await makeRequest(GET_ALL_EVENTS, {});
-        setAllEvents(data);
-
+        const sortedEvents = data.sort(function(a, b) {
+            var keyA = new Date(a.updated_at),
+              keyB = new Date(b.updated_at);
+            // Compare the 2 dates
+            if (keyA < keyB) return -1;
+            if (keyA > keyB) return 1;
+            return 0;
+          });
         
+          setAllEvents(sortedEvents)
+
+       
         
       } catch (error) {
         setError(error);
@@ -23,6 +32,9 @@ function CardContainer() {
     };
     fetchData();
   }, []);
+
+  
+
 
   
 

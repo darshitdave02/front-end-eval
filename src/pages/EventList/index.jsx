@@ -7,7 +7,7 @@ import Footer from '../../Footer';
 import './index.css';
 function EventDetails() {
   return (
-    <div className='event-details'>
+    <div className='event-list'>
       <Filter />
       <CardContainer />
 

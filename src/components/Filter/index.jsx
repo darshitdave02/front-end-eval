@@ -5,7 +5,14 @@ import {
   faChevronUp,
   faCircleDot,
   faCircle,
+  faBookmark
+  
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  
+  faCircle as faHollowCircle,
+  
+} from '@fortawesome/free-regular-svg-icons';
 import React from 'react';
 import './index.css';
 
@@ -30,7 +37,7 @@ function Filter() {
             <div>ALL</div>
           </div>
           <div className='filter-registered'>
-            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faHollowCircle} />
             <div>REGISTERED</div>
           </div>
         </div>
@@ -38,11 +45,11 @@ function Filter() {
         <div className='filter-right'>
           <div className='bookmarked'>
             BOOKMARKED
-            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faHollowCircle} />
           </div>
           <div className='seats'>
             SEATS AVAILABLE
-            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faHollowCircle} />
           </div>
         </div>
       </div>
