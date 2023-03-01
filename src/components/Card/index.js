@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faCircleXmark, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark as faHollowBookmark } from '@fortawesome/free-regular-svg-icons';
-
+import RegisterButton from '../RegisterButton.js';
 import data from '../../mockData/data';
 import './index.css';
 import PropTypes from 'prop-types';
@@ -31,17 +31,36 @@ function Card(props) {
   };
 
   const handleRegisterClick = async () => {
-    try {
-      await makeRequest(UPDATE_EVENT(props.event.id), {
-        data: {
-          isRegistered: !isRegister,
-        },
-      });
 
-      setIsRegister(!isRegister);
-    } catch (e) {
-      // Handle ToDo
+    if(isRegister) {
+      try {
+        await makeRequest(UPDATE_EVENT(props.event.id), {
+          data: {
+            isRegistered: !isRegister,
+          },
+        });
+  
+        setIsRegister(!isRegister);
+      } catch (e) {
+        // Handle ToDo
+      }
     }
+    if(props.event.areSeatsAvailable) {
+      try {
+        await makeRequest(UPDATE_EVENT(props.event.id), {
+          data: {
+            isRegistered: !isRegister,
+          },
+        });
+  
+        setIsRegister(!isRegister);
+      } catch (e) {
+        // Handle ToDo
+      }
+
+    }
+
+    
   };
 
   const navigateToCardDetails = () => {
@@ -59,11 +78,20 @@ function Card(props) {
         <div className='venue'>VENUE: {props.event.venue}</div>
         <div className='date'>DATE: {props.event.datetime}</div>
       </div>
-      <div onClick={handleRegisterClick} className='meta'>
-        <div className={isRegister ? 'filter-reg-col-red' : 'filter-reg-col-yellow'}>
+      <div  className='meta'>
+        {props.event.areSeatsAvailable && <div onClick={handleRegisterClick} className={isRegister ? 'filter-reg-col-red' : ''}>
+          <FontAwesomeIcon icon={isRegister ? faCircleCheck : true} />
+          <div>{isRegister ? 'REGISTERED' : 'Register'}</div>
+        </div>}
+
+        {!props.event.areSeatsAvailable && <div className={isRegister ? 'filter-reg-col-red' : 'filter-reg-col-yellow'}>
           <FontAwesomeIcon icon={isRegister ? faCircleCheck : faCircleXmark} />
-          <div>{isRegister ? 'REGISTERED' : 'NO SEATS AVAILABLE'}</div>
-        </div>
+          <div>{isRegister ? 'REGISTERED' : 'NO SEATS ARE AVAILABLE'}</div>
+        </div>}
+
+
+
+
         <div className='bookmark'>
           <FontAwesomeIcon
             onClick={handleBookMarkClick}
