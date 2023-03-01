@@ -3,3 +3,10 @@
   padding-right: 25vw;
   /* padding-bottom: 30px; */
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .event-list {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
