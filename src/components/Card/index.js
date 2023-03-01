@@ -64,16 +64,19 @@ function Card(props) {
   };
 
   return (
-    <div onClick={navigateToCardDetails} className='card'>
-      <img src={props.event.imgUrl} alt='event_img' />
-      <div className='card-details'>
-        <div className='card-title'>{props.event.name.toUpperCase()}</div>
-        <div className='description'>{props.event.description}</div>
+    <div className='card'>
+      <div onClick={navigateToCardDetails} className='card'>
+        <img src={props.event.imgUrl} alt='event_img' />
+        <div className='card-details'>
+          <div className='card-title'>{props.event.name.toUpperCase()}</div>
+          <div className='description'>{props.event.description}</div>
+        </div>
+        <div className='loctime'>
+          <div className='venue'>VENUE: {props.event.venue}</div>
+          <div className='date'>DATE: {props.event.datetime}</div>
+        </div>
       </div>
-      <div className='loctime'>
-        <div className='venue'>VENUE: {props.event.venue}</div>
-        <div className='date'>DATE: {props.event.datetime}</div>
-      </div>
+
       <div className='meta'>
         {props.event.areSeatsAvailable && (
           <div onClick={handleRegisterClick} className={isRegister ? 'filter-reg-col-red' : ''}>
